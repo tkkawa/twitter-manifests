@@ -5,3 +5,7 @@ resources:
   - main.yaml
   - service.yaml
 
+images:
+  - name: sample-image
+    newName: alpine
+    newTag: 3.15
