@@ -16,7 +16,6 @@ spec:
       containers:
         - name: rollout-blue-green-sample
           image: alpine:3.15
-          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
   strategy:
