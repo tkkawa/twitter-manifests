@@ -17,7 +17,6 @@ spec:
         - name: rollout-blue-green-sample
           image: sample-image
           ports:
-            - name: http
             - containerPort: 80
   strategy:
     blueGreen:
