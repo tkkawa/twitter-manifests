@@ -15,14 +15,22 @@ spec:
     spec:
       containers:
         - name: rollout-blue-green-sample
-          image: sample-image
+          image: rollout-blue-green-sample-image
+          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 80
+            - containerPort: 9090
+          env:
+            - name: TEST_ENV_01
+              value: "environment message01"
+          envFrom:
+            - configMapRef:
+                name: blue-green-sample-config
   strategy:
     blueGreen:
       activeService: rollout-blue-green-svc-active
       previewService: rollout-blue-green-svc-preview
       autoPromotionEnabled: false
+
 # apiVersion: apps/v1
 # kind: Deployment
 # metadata:
