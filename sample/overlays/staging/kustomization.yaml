@@ -4,7 +4,7 @@ resources:
 
 images:
   - name: rollout-blue-green-sample-image
-    newName: argoproj/rollouts-demo:green
+    newName: argoproj/rollouts-demo
     newTag: blue
 
 patches:
