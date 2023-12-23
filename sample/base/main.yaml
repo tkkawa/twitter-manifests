@@ -30,6 +30,18 @@ spec:
       activeService: rollout-blue-green-svc-active
       previewService: rollout-blue-green-svc-preview
       autoPromotionEnabled: false
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: rollout-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Rollout
+    name: rollout-hpa
+  minReplicas: 2
+  maxReplicas: 5
 
 # apiVersion: apps/v1
 # kind: Deployment
