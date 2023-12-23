@@ -3,7 +3,6 @@ kind: Rollout
 metadata:
   name: rollout-blue-green
 spec:
-  replicas: 2
   revisionHistoryLimit: 2
   selector:
     matchLabels:
@@ -40,7 +39,7 @@ spec:
     apiVersion: argoproj.io/v1alpha1
     kind: Rollout
     name: rollout-blue-green
-  minReplicas: 2
+  minReplicas: 3
   maxReplicas: 5
 
 # apiVersion: apps/v1
