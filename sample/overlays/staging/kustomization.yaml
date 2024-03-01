@@ -1,17 +1,14 @@
 namespace: staging
 resources:
   - ../../base
-
 images:
   - name: rollout-blue-green-sample-image
     newName: argoproj/rollouts-demo
     newTag: green
-
 patches:
   - target:
       kind: Rollout
     path: main-patch.yaml
-
 configMapGenerator:
   - name: blue-green-sample-config
     envs:
